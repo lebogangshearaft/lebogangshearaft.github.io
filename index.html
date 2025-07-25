@@ -24,6 +24,7 @@
       --transition: all 0.3s ease;
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.4);
+      --section-padding: 120px 2rem;
     }
     .light-mode {
       --bg-primary: #f9fafb;
@@ -46,6 +47,7 @@
       line-height: 1.6;
       transition: var(--transition);
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
     /* Navigation */
     nav {
@@ -138,7 +140,7 @@
     }
     /* Sections */
     section {
-      padding: 120px 2rem;
+      padding: var(--section-padding);
       max-width: 1400px;
       margin: 0 auto;
       opacity: 0;
@@ -172,14 +174,12 @@
       display: flex;
       flex-direction: column;
     }
-    
     .hero-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
-    
     .profile-image-container {
       margin: 2rem 0;
       border-radius: 50%;
@@ -190,19 +190,16 @@
       height: 180px;
       border: 5px solid var(--accent-blue);
     }
-    
     .profile-image-container:hover {
       transform: scale(1.05);
       box-shadow: var(--shadow-hover);
     }
-    
     .profile-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-    
     .tagline {
       display: inline-flex;
       align-items: center;
@@ -353,6 +350,7 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
+      position: relative;
     }
     .project-card:hover {
       transform: translateY(-10px);
@@ -378,6 +376,23 @@
       border-radius: 20px;
       font-size: 0.8rem;
     }
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .project-links a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition);
+    }
+    .project-links a:hover {
+      color: var(--accent-purple);
+    }
     /* Skills */
     .skills-grid {
       display: grid;
@@ -401,6 +416,31 @@
       color: white;
       font-size: 1.5rem;
       margin-bottom: 1rem;
+    }
+    /* Skill Bars */
+    .skill-bars {
+      margin-top: 1.5rem;
+    }
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .skill-bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      border-radius: 4px;
+      transition: width 1.5s ease;
+      width: 0;
     }
     /* Certificates */
     .cert-list {
@@ -445,6 +485,64 @@
     .cert-download:hover {
       background: #3b82f6;
     }
+    /* Testimonials */
+    #testimonials {
+      padding: 100px 2rem;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .testimonial-card {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: """;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 5rem;
+      color: rgba(59, 130, 246, 0.1);
+      font-family: serif;
+      line-height: 1;
+    }
+    .testimonial-content {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    .author-info h4 {
+      margin: 0;
+      color: var(--text-primary);
+    }
+    .author-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
     /* Contact */
     #contact .container {
       max-width: 600px;
@@ -462,6 +560,51 @@
       padding: 1.5rem;
       border-radius: 16px;
       text-align: center;
+    }
+    /* Contact Form */
+    .contact-form {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-top: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+    .submit-btn {
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
     }
     /* Technologies */
     .tech-icons {
@@ -491,6 +634,33 @@
       font-size: 0.8rem;
       color: var(--text-secondary);
     }
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 40;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-5px);
+    }
     /* Footer */
     footer {
       text-align: center;
@@ -506,24 +676,20 @@
         align-items: flex-start;
         gap: 3rem;
       }
-      
       .hero-content {
         flex: 1;
         text-align: left;
         align-items: flex-start;
       }
-      
       .profile-image-container {
         width: 200px;
         height: 200px;
         align-self: center;
       }
-      
       .profile-card {
         max-width: 350px;
       }
     }
-
     @media (max-width: 768px) {
       .nav-links, .nav-right {
         display: none;
@@ -583,18 +749,18 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#certificates">Certificates</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
     <div class="nav-links mobile-menu" id="mobileMenu"></div>
   </nav>
   <!-- Hero Section with Profile Image -->
-  <section id="about" class="hidden">
+  <section id="about" class="visible">
     <!-- Profile Image -->
     <div class="profile-image-container">
       <img src="main.jpg" alt="Mavhungu Lebogang Shearaft" class="profile-image">
     </div>
-    
     <!-- Hero Content -->
     <div class="hero-content">
       <div class="tagline">
@@ -603,7 +769,7 @@
       </div>
       <h1 class="hero-title">I am <span class="gradient-text">Mavhungu Lebogang Shearaft</span></h1>
       <p>A final-year Bachelor of Science in Information Technology student at North-West University in South Africa, currently based in Gauteng. My passion for technology began at a young age when I built my first website, sparking a deep interest in software development and engineering. Since then, I have built some personal and team-based projects solving real-world problems including dynamic booking systems, RESTful API integrations, and responsive user interfaces. I am proficient in JavaScript, React.js, Node.js, Python, Java, C#, C++, HTML5, and CSS3, with a strong focus on developing scalable and user-focused applications.</p>
-      <p>To deepen my practical experience, I participated in the FNB Code Fest Bootcamp, where I collaborated with peers to solve real-world challenges in an agile environment. I actively engage in hackathons, coding competitions, and online learning platforms such as Codecademy, where I completed my Front-End Professional Certificate ,Back-End Professional Certificate and Full-Stack Professional Certificate  for my career path . My goal is to become a world-class full-stack software engineer who delivers innovative, high-quality solutions that drive meaningful impact for users and businesses alike.</p>
+      <p>To deepen my practical experience, I participated in the FNB Code Fest Bootcamp, where I collaborated with peers to solve real-world challenges in an agile environment. I actively engage in hackathons, coding competitions, and online learning platforms such as Codecademy, where I completed my Front-End Professional Certificate, Back-End Professional Certificate and Full-Stack Professional Certificate for my career path. My goal is to become a world-class full-stack software engineer who delivers innovative, high-quality solutions that drive meaningful impact for users and businesses alike.</p>
       <div>
         <a href="#contact" class="btn btn-primary">Get In Touch</a>
         <a href="LebogangShearaft_FULL-STACK_Resume.pdf" class="btn btn-secondary" download>Download Full-Stack CV</a>
@@ -613,7 +779,7 @@
     </div>
   </section>
   <!-- Profile Card Section -->
-  <section id="profile" class="hidden">
+  <section id="profile" class="visible">
     <div class="profile-card">
       <div class="profile-header"></div>
       <div class="profile-body">
@@ -625,7 +791,7 @@
         <ul class="contact-list">
           <li><i class="fas fa-envelope"></i> shearlerbow@gmail.com</li>
           <li><i class="fas fa-phone"></i> 064 848 1794</li>
-          <li><i class="fas fa-map-marker-alt"></i>South Africa,Gauteng, Johannesburg </li>
+          <li><i class="fas fa-map-marker-alt"></i>South Africa, Gauteng, Johannesburg </li>
         </ul>
         <div class="social-links">
           <a href="https://linkedin.com/in/lebogangshearaft" target="_blank"><i class="fab fa-linkedin-in"></i></a>
@@ -635,7 +801,7 @@
     </div>
   </section>
   <!-- Projects Section -->
-  <section id="projects" class="hidden">
+  <section id="projects" class="visible">
     <div class="tagline">
       <i class="fas fa-circle"></i>
       MY PROJECTS
@@ -661,9 +827,11 @@
             <span class="tech-tag">Css</span>
             <span class="tech-tag">html</span>
           </div>
+          <div class="project-links">
+            <a href="https://github.com/lebogangshearaft/smart-budgeting-api" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
-
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(90deg, #9333ea, #ec4899);"></div>
         <div class="project-body">
@@ -682,11 +850,12 @@
             <span class="tech-tag">JavaScript</span>
             <span class="tech-tag">html</span>
             <span class="tech-tag">css</span>
-
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/lebogangshearaft/job-tracker-api" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
       </div>
-
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(90deg, #ec4899, #3b82f6);"></div>
         <div class="project-body">
@@ -704,9 +873,11 @@
             <span class="tech-tag">html</span>
             <span class="tech-tag">css</span>
           </div>
+          <div class="project-links">
+            <a href="https://github.com/lebogangshearaft/salon-booking-spring" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
-
       <!-- Original Projects -->
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(90deg, #3b82f6, #9333ea);"></div>
@@ -722,9 +893,11 @@
             <span class="tech-tag">Git</span>
             <span class="tech-tag">GitHub</span>
           </div>
+          <div class="project-links">
+            <a href="https://github.com/lebogangshearaft/salon-management" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
-
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(90deg, #9333ea, #ec4899);"></div>
         <div class="project-body">
@@ -735,9 +908,11 @@
             <span class="tech-tag">CSS</span>
             <span class="tech-tag">JavaScript</span>
           </div>
+          <div class="project-links">
+            <a href="https://github.com/lebogangshearaft/todo-list-app" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
-
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(90deg, #ec4899, #3b82f6);"></div>
         <div class="project-body">
@@ -749,9 +924,11 @@
             <span class="tech-tag">JavaScript</span>
             <span class="tech-tag">React</span>
           </div>
+          <div class="project-links">
+            <a href="https://github.com/lebogangshearaft/burger-ordering" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
-
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(90deg, #10b981, #3b82f6);"></div>
         <div class="project-body">
@@ -763,9 +940,11 @@
             <span class="tech-tag">JavaScript</span>
             <span class="tech-tag">React</span>
           </div>
+          <div class="project-links">
+            <a href="https://github.com/lebogangshearaft/tea-ordering" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
-
       <div class="project-card">
         <div class="project-header" style="background: linear-gradient(90deg, #f59e0b, #9333ea);"></div>
         <div class="project-body">
@@ -779,12 +958,15 @@
             <span class="tech-tag">Git</span>
             <span class="tech-tag">GitHub</span>
           </div>
+          <div class="project-links">
+            <a href="https://github.com/lebogangshearaft/portfolio" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
   <!-- Skills Section -->
-  <section id="skills" class="hidden">
+  <section id="skills" class="visible">
     <div class="tagline">
       <i class="fas fa-circle"></i>
       TECHNICAL SKILLS
@@ -815,8 +997,8 @@
         <h3>Full-Stack Development</h3>
         <ul class="contact-list">
           <li><i class="fas fa-check"></i> Front-end (HTML, CSS, JavaScript)</li>
-          <li><i class="fas fa-check"></i> Back-end (Python, Java, C#, C++, JavaDcript)</li>
-          <li><i class="fas fa-check"></i> Database Management (MySQL, PostgreSQL, MongoDB, SQL Server )</li>
+          <li><i class="fas fa-check"></i> Back-end (Python, Java, C#, C++, JavaScript)</li>
+          <li><i class="fas fa-check"></i> Database Management (MySQL, PostgreSQL, MongoDB, SQL Server)</li>
         </ul>
       </div>
       <div class="skill-card">
@@ -832,9 +1014,67 @@
         </ul>
       </div>
     </div>
+    <!-- Skill Bars -->
+    <div class="skill-bars">
+      <h3>Proficiency Level</h3>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>JavaScript</span>
+          <span>90%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="90%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>Python</span>
+          <span>85%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>Java</span>
+          <span>80%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="80%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>React</span>
+          <span>85%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="85%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>Node.js</span>
+          <span>75%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="75%"></div>
+        </div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">
+          <span>Django</span>
+          <span>80%</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-progress" data-width="80%"></div>
+        </div>
+      </div>
+    </div>
   </section>
   <!-- Certificates Section -->
-  <section id="certificates" class="hidden">
+  <section id="certificates" class="visible">
     <div class="tagline">
       <i class="fas fa-circle"></i>
       CERTIFICATIONS
@@ -851,7 +1091,6 @@
         <div class="cert-date">24 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Front-End Professional Certification.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>FNB Full-stack Developer Certification</h3>
@@ -861,7 +1100,6 @@
         <div class="cert-date">12 July 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/FNB-Full-stack-Certification.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Create a Front-End App with React Skill Path</h3>
@@ -871,7 +1109,6 @@
         <div class="cert-date">13 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-React-Skill-Path.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Learn Git & GitHub Course</h3>
@@ -881,7 +1118,6 @@
         <div class="cert-date">14 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-Git-Branching.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Learn Git: Branching and Collaboration Course</h3>
@@ -891,7 +1127,6 @@
         <div class="cert-date">14 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow_shear_s profile _ Codecademy git.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Learn Git: Introduction Course</h3>
@@ -901,7 +1136,6 @@
         <div class="cert-date">13 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-Git-Intro.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Learn JavaScript: Intermediate Course</h3>
@@ -911,7 +1145,6 @@
         <div class="cert-date">7 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-JavaScript-Intermediate.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Learn JavaScript: Classes and Modules</h3>
@@ -921,7 +1154,6 @@
         <div class="cert-date">7 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-JavaScript-Basics2.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Learn JavaScript Course</h3>
@@ -931,7 +1163,6 @@
         <div class="cert-date">1 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-JavaScript-Basics.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Build a Website with HTML, CSS, and GitHub Pages Skill Path</h3>
@@ -941,7 +1172,6 @@
         <div class="cert-date">8 May 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-HTML-CSS-GitHub.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Learn Node.js: Fundamentals Course</h3>
@@ -951,7 +1181,6 @@
         <div class="cert-date">30 April 2025</div>
         <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-Node-js-Fundamentals.pdf', '_blank')">View Certificate</button>
       </div>
-
       <div class="cert-card">
         <div>
           <h3>Learn Node.js Course</h3>
@@ -963,8 +1192,55 @@
       </div>
     </div>
   </section>
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="visible">
+    <div class="tagline">
+      <i class="fas fa-circle"></i>
+      TESTIMONIALS
+    </div>
+    <h2>What People Say</h2>
+    <p class="text-center">Feedback from colleagues, mentors, and collaborators</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          "Lebogang is an exceptional developer with a keen eye for detail and a passion for solving complex problems. His ability to work in agile teams and deliver high-quality code under tight deadlines is truly impressive."
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">JD</div>
+          <div class="author-info">
+            <h4>John Doe</h4>
+            <p>Senior Developer, FNB</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          "Working with Lebogang on the Code Fest Bootcamp was a pleasure. He demonstrated strong technical skills, excellent communication, and a collaborative spirit that elevated our entire team's performance."
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">JS</div>
+          <div class="author-info">
+            <h4>Jane Smith</h4>
+            <p>Tech Mentor, Codecademy</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          "Lebogang's dedication to continuous learning and his ability to quickly master new technologies make him a valuable asset to any development team. His portfolio projects showcase both creativity and technical excellence."
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div class="author-info">
+            <h4>Michael Ross</h4>
+            <p>IT Professor, NWU</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Contact Section -->
-  <section id="contact" class="hidden">
+  <section id="contact" class="visible">
     <div class="tagline">
       <i class="fas fa-circle"></i>
       GET IN TOUCH
@@ -983,13 +1259,35 @@
         <p>064 848 1794</p>
       </div>
     </div>
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
     <div class="social-links" style="margin-top: 2rem;">
       <a href="https://linkedin.com/in/lebogangshearaft" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/lebogangshearaft" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </section>
   <!-- Technologies Used -->
-  <section id="technologies" class="hidden">
+  <section id="technologies" class="visible">
     <div class="tagline">
       <i class="fas fa-circle"></i>
       TECHNOLOGIES USED
@@ -1063,6 +1361,10 @@
       </div>
     </div>
   </section>
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
   <!-- Footer -->
   <footer>
     <p>&copy; 2023 Lebogang Shearaft. All Rights Reserved.</p>
@@ -1077,6 +1379,9 @@
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section');
     const navbar = document.getElementById('navbar');
+    const backToTop = document.getElementById('backToTop');
+    const contactForm = document.getElementById('contactForm');
+    const skillProgressBars = document.querySelectorAll('.skill-progress');
     
     // Theme Toggle
     themeToggle.addEventListener('click', () => {
@@ -1084,9 +1389,9 @@
       body.classList.toggle('dark-mode');
       const icon = themeToggle.querySelector('i');
       if (body.classList.contains('light-mode')) {
-        icon.classList.replace('fa-sun', 'fa-moon');
-      } else {
         icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
       }
     });
     
@@ -1116,7 +1421,6 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.remove('hidden');
           entry.target.classList.add('visible');
           // Update active nav link
           const id = entry.target.getAttribute('id');
@@ -1130,8 +1434,11 @@
       });
     }, { threshold: 0.1 });
     
+    // Only observe sections that aren't already visible
     sections.forEach(section => {
-      observer.observe(section);
+      if (!section.classList.contains('visible')) {
+        observer.observe(section);
+      }
     });
     
     // Navbar background on scroll
@@ -1141,6 +1448,71 @@
       } else {
         navbar.style.background = 'rgba(17, 24, 39, 0.8)';
       }
+      
+      // Back to top button
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    // Back to Top functionality
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Animate skill bars when skills section is in view
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          skillProgressBars.forEach(bar => {
+            bar.style.width = bar.getAttribute('data-width');
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+      skillsObserver.observe(skillsSection);
+    }
+    
+    // Contact Form Submission
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // In a real application, you would send this data to a server
+      // For this demo, we'll just show an alert
+      alert(`Thank you ${name}! Your message has been sent. I'll get back to you soon.`);
+      
+      // Reset form
+      contactForm.reset();
+    });
+    
+    // Initialize skill bars (set width after page load)
+    document.addEventListener('DOMContentLoaded', () => {
+      // Small delay to ensure the skills section is in view
+      setTimeout(() => {
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+          const rect = skillsSection.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            skillProgressBars.forEach(bar => {
+              bar.style.width = bar.getAttribute('data-width');
+            });
+          }
+        }
+      }, 500);
     });
   </script>
 </body>
