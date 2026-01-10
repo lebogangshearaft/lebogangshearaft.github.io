@@ -725,6 +725,23 @@
       .hero-title {
         font-size: 2.5rem;
       }
+      .skills-compact {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      max-width: 900px;
+    }
+    
+    .skill-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+    
+    .skill-row strong {
+      color: #111;
+    }
     }
   </style>
 </head>
@@ -778,7 +795,7 @@
       </p>
       <div>
         <a href="#contact" class="btn btn-primary">Get In Touch</a>
-        <a href="Mavhungu_Lebogang_Software_Engineering_Graduate_CV" class="btn btn-secondary" download>Download Full-Stack CV</a>
+        <a href="Mavhungu_Lebogang_Software_Engineering_Graduate_CV.pdf" class="btn btn-secondary" download>Download CV</a>
       </div>
     </div>
   </section>
@@ -817,197 +834,259 @@
 
   <div class="container">
 
-    <!-- EduMate -->
+   <!-- EduMate -->
     <div class="project-card">
       <div class="project-header"></div>
       <div class="project-body">
         <h3>EduMate</h3>
         <p>
-          An educational support platform designed to help students manage learning resources,
-          track progress, and improve academic performance.
+          EduMate is a full-stack educational support platform designed to help students
+          manage learning resources, track academic progress, and improve overall study
+          organization. The system is built with scalability and maintainability in mind,
+          using modern web technologies and a strongly typed codebase.
         </p>
+    
+        <p>
+          The application uses React (with JSX) for a dynamic and responsive user interface,
+          Node.js for backend and server-side logic, and Prisma as an ORM to manage database
+          schemas and queries safely. TypeScript is used across the project to improve code
+          reliability, maintainability, and long-term scalability.
+        </p>
+    
         <div class="tech-tags">
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Prisma ORM</span>
           <span class="tech-tag">HTML</span>
           <span class="tech-tag">CSS</span>
-          <span class="tech-tag">JavaScript</span>
         </div>
+    
+        <a href="https://github.com/lebogangshearaft/edumate_app" target="_blank" class="project-link">View on GitHub</a>
       </div>
     </div>
-
     <!-- Salon Management System -->
     <div class="project-card">
       <div class="project-header"></div>
       <div class="project-body">
         <h3>Salon Management System</h3>
         <p>
-          A system for managing salon bookings, services, and customers,
-          improving appointment scheduling and service efficiency.
+          A full-stack salon management web application designed to streamline appointments,
+          service listings, and customer interaction for a beauty and hair salon. The system
+          enables clients to view services, make bookings, and for administrators to manage
+          availability and customer records using a structured backend API.
         </p>
+    
+        <p>
+          The project demonstrates practical use of modern backend development with Spring Boot,
+          database integration using MySQL, and frontend interaction with HTML, CSS, and JavaScript.
+          It also incorporates RESTful APIs and follows an MVC architecture to separate concerns
+          and improve maintainability.
+        </p>
+    
         <div class="tech-tags">
           <span class="tech-tag">Java</span>
           <span class="tech-tag">Spring Boot</span>
           <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">MVC</span>
         </div>
-      </div>
-    </div>
-
-    <!-- CDSS -->
+    <a href="https://github.com/lebogangshearaft/lerbows-luxury-hair-beauty-salon" target="_blank" class="project-link">View on GitHub</a>
+  </div>
+</div>
+    <!-- Clinical Decision Support System (CDSS) -->
     <div class="project-card">
       <div class="project-header"></div>
       <div class="project-body">
         <h3>Clinical Decision Support System (CDSS)</h3>
         <p>
-          A healthcare-focused system that assists medical practitioners
-          with data-driven clinical decision-making.
+          A backend-driven Clinical Decision Support System (CDSS) designed to assist
+          healthcare professionals with structured, data-informed decision-making. This
+          system evaluates clinical inputs and delivers evidence-based recommendations
+          through a scalable API interface.
         </p>
+    
+        <p>
+          The solution is built using Python and FastAPI to provide clean, RESTful API
+          endpoints for clinical rule processing. PostgreSQL serves as the persistent
+          database, ensuring reliable storage and querying of healthcare datasets. This
+          architecture emphasizes modularity, maintainability, and easy integration with
+          external systems.
+        </p>
+    
         <div class="tech-tags">
-          <span class="tech-tag">C#</span>
-          <span class="tech-tag">ASP.NET Core</span>
-          <span class="tech-tag">SQL Server</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">Backend Engineering</span>
         </div>
+    
+        <a href="https://github.com/lebogangshearaft/clinical-decision-support-api"
+           target="_blank"
+           class="project-link">
+          View on GitHub
+        </a>
       </div>
     </div>
 
     <!-- Portfolio -->
     <div class="project-card">
+      <div class="project-card">
       <div class="project-header"></div>
       <div class="project-body">
         <h3>Personal Portfolio Website</h3>
         <p>
-          A responsive portfolio website showcasing my skills, projects,
-          certifications, and professional experience.
+          A responsive personal portfolio website designed to present my technical skills,
+          software engineering projects, and professional background in a clear and
+          recruiter-friendly manner. The site serves as a central hub for showcasing
+          real-world projects, GitHub repositories, and career-ready competencies.
         </p>
+    
+        <p>
+          The portfolio is built using semantic HTML, modern CSS, and vanilla JavaScript,
+          with a strong focus on clean UI design, accessibility, and performance. It follows
+          responsive design principles to ensure usability across desktop and mobile devices.
+        </p>
+    
         <div class="tech-tags">
           <span class="tech-tag">HTML</span>
           <span class="tech-tag">CSS</span>
           <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Responsive Design</span>
+          <span class="tech-tag">UI/UX</span>
         </div>
+    
+        <a href="https://github.com/lebogangshearaft/lebogangshearaft.github.io"
+           target="_blank"
+           class="project-link">
+          View on GitHub
+        </a>
       </div>
     </div>
 
-    <!-- Burger App -->
+    <!-- Personal Budget API -->
     <div class="project-card">
-      <h3>Burger Ordering App</h3>
-      <p>
-        A simple web application that allows users to customize and order burgers,
-        demonstrating frontend logic and UI interaction.
-      </p>
-      <div class="tech-tags">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      <div class="project-header"></div>
+      <div class="project-body">
+        <h3>Personal Budget API</h3>
+        <p>
+          A backend RESTful API designed to help users manage personal budgets by tracking
+          income, expenses, and financial categories. The system provides structured endpoints
+          for creating, retrieving, updating, and analyzing budget data in a secure and
+          scalable manner.
+        </p>
+    
+        <p>
+          The API is built using Python and FastAPI, with PostgreSQL used for persistent data
+          storage. It follows REST principles and clean architecture practices, enabling easy
+          integration with frontend applications or external services while maintaining clear
+          separation of concerns.
+        </p>
+    
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">FastAPI</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">Backend Development</span>
+        </div>
+    
+        <a href="https://github.com/lebogangshearaft/personal-budget-api"
+           target="_blank"
+           class="project-link">
+          View on GitHub
+        </a>
       </div>
-     </div> 
-  </div>
+    </div>
+   <!-- Ordering App -->
+    <div class="project-card">
+      <div class="project-header"></div>
+      <div class="project-body">
+        <h3>Ordering App</h3>
+        <p>
+          A frontend web application designed to simulate an online ordering experience,
+          allowing users to browse items, place orders, and interact with a dynamic user
+          interface. The application focuses on client-side logic, usability, and responsive
+          design principles.
+        </p>
+    
+        <p>
+          The project is built using HTML, CSS, and JavaScript, demonstrating practical
+          implementation of DOM manipulation, event handling, and interactive UI behavior.
+          It emphasizes clean layout structure, user-friendly navigation, and modular
+          frontend code.
+        </p>
+    
+        <div class="tech-tags">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">DOM Manipulation</span>
+          <span class="tech-tag">Responsive Design</span>
+        </div>
+    
+        <a href="https://github.com/lebogangshearaft/Ordering-app"
+           target="_blank"
+           class="project-link">
+          View on GitHub
+        </a>
+      </div>
+    </div>
  </section>
-
-
   <!-- Skills Section -->
   <section id="skills" class="visible">
     <div class="tagline">
       <i class="fas fa-circle"></i>
       TECHNICAL SKILLS
     </div>
-    <h2>My Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-icon">
-          <i class="fas fa-laptop-code"></i>
-        </div>
-        <h3>Programming & Software Development</h3>
-        <ul class="contact-list">
-          <li><i class="fas fa-check"></i> Python</li>
-          <li><i class="fas fa-check"></i> Java</li>
-          <li><i class="fas fa-check"></i> C++</li>
-          <li><i class="fas fa-check"></i> C#</li>
-          <li><i class="fas fa-check"></i> Advanced C#</li>
-          <li><i class="fas fa-check"></i> Data Structures & Algorithms</li>
-          <li><i class="fas fa-check"></i> HTML</li>
-          <li><i class="fas fa-check"></i> CSS</li>
-          <li><i class="fas fa-check"></i> C#</li>
-        </ul>
+  
+    <h2>Core Competencies</h2>
+  
+    <div class="skills-compact">
+  
+      <div class="skill-row">
+        <strong>Languages</strong>
+        <span>Java, Python, C#, JavaScript, TypeScript, SQL</span>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">
-          <i class="fas fa-layer-group"></i>
-        </div>
-        <h3>Full-Stack Development</h3>
-        <ul class="contact-list">
-          <li><i class="fas fa-check"></i> Front-end (HTML, CSS, JavaScript)</li>
-          <li><i class="fas fa-check"></i> Back-end (Python, Java, C#, C++, JavaScript)</li>
-          <li><i class="fas fa-check"></i> Database Management (MySQL, PostgreSQL, MongoDB, SQL Server)</li>
-        </ul>
+  
+      <div class="skill-row">
+        <strong>Frameworks</strong>
+        <span>Spring Boot, Node.js, Express.js, React.js, FastAPI</span>
       </div>
-      <div class="skill-card">
-        <div class="skill-icon">
-          <i class="fas fa-code-branch"></i>
-        </div>
-        <h3>Version Control & Collaboration</h3>
-        <ul class="contact-list">
-          <li><i class="fas fa-check"></i> Git: for version control</li>
-          <li><i class="fas fa-check"></i> GitHub: Used for remote repository hosting</li>
-          <li><i class="fas fa-check"></i> Agile Collaboration Practices: Worked in teams using Agile, Scrum, and Kanban methodologies</li>
-          <li><i class="fas fa-check"></i> Teamwork in software development projects</li>
-        </ul>
+  
+      <div class="skill-row">
+        <strong>Software Engineering</strong>
+        <span>OOP, Data Structures & Algorithms, SDLC, Agile</span>
       </div>
-    </div>
-    <!-- Skill Bars -->
-    <div class="skill-bars">
-      <h3>Proficiency Level</h3>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>JavaScript</span>
-          <span>90%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="90%"></div>
-        </div>
+  
+      <div class="skill-row">
+        <strong>Databases</strong>
+        <span>PostgreSQL, MySQL</span>
       </div>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>Python</span>
-          <span>85%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="85%"></div>
-        </div>
+  
+      <div class="skill-row">
+        <strong>Cloud & DevOps</strong>
+        <span>Azure Fundamentals, AWS Basics, Docker, GitHub Actions</span>
       </div>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>Java</span>
-          <span>80%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="80%"></div>
-        </div>
+  
+      <div class="skill-row">
+        <strong>Testing & Quality</strong>
+        <span>Unit Testing, API Testing, Debugging</span>
       </div>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>React</span>
-          <span>85%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="85%"></div>
-        </div>
+  
+      <div class="skill-row">
+        <strong>Tools</strong>
+        <span>Git, GitHub, Visual Studio, VS Code</span>
       </div>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>Node.js</span>
-          <span>75%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="75%"></div>
-        </div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name">
-          <span>Django</span>
-          <span>80%</span>
-        </div>
-        <div class="skill-bar">
-          <div class="skill-progress" data-width="80%"></div>
-        </div>
-      </div>
+  
     </div>
   </section>
+
   <!-- Certificates Section -->
   <section id="certificates" class="visible">
     <div class="tagline">
@@ -1470,6 +1549,7 @@
   </script>
 </body>
 </html>
+
 
 
 
