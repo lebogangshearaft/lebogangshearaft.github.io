@@ -442,6 +442,100 @@
       transition: width 1.5s ease;
       width: 0;
     }
+    .skills-grid-pro {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-card-pro {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .skill-card-pro:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .skill-card-pro-header {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .skill-icon-pro {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .skill-card-pro h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    
+    .skill-card-pro p {
+      margin: 0.2rem 0 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .light-mode .pill {
+      background: rgba(17, 24, 39, 0.06);
+      border: 1px solid rgba(17, 24, 39, 0.08);
+    }
+    
+    .skill-list-pro {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+    
+    .skill-list-pro li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    .skill-list-pro i {
+      color: #3b82f6;
+      margin-top: 3px;
+    }
+
     /* Certificates */
     .cert-list {
       max-width: 800px;
@@ -681,6 +775,20 @@
         text-align: left;
         align-items: flex-start;
       }
+      .photo-slogan {
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+    
+    @media (min-width: 769px) {
+      .photo-slogan {
+        text-align: left;
+      }
+    }
       .profile-image-container {
         width: 200px;
         height: 200px;
@@ -725,23 +833,6 @@
       .hero-title {
         font-size: 2.5rem;
       }
-      .skills-compact {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-      max-width: 900px;
-    }
-    
-    .skill-row {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 1rem;
-      font-size: 0.95rem;
-    }
-    
-    .skill-row strong {
-      color: #111;
-    }
     }
   </style>
 </head>
@@ -778,6 +869,9 @@
     <div class="profile-image-container">
       <img src="main.jpg" alt="Mavhungu Lebogang Shearaft" class="profile-image">
     </div>
+    <p class="photo-slogan">
+    Building reliable software for real-world problems.
+    </p>
     <!-- Hero Content -->
     <div class="hero-content">
       <div class="tagline">
@@ -810,30 +904,46 @@
         <h3>Mavhungu Lebogang Shearaft</h3>
         <p>Full-Stack Software Developer</p>
         <ul class="contact-list">
-          <li><i class="fas fa-envelope"></i> mavhungulebogang17@gmail.com</li>
-          <li><i class="fas fa-phone"></i> 064 848 1794</li>
-          <li><i class="fas fa-map-marker-alt"></i>South Africa, Gauteng, Johannesburg </li>
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:mavhungulebogang17@gmail.com">
+              mavhungulebogang17@gmail.com
+            </a>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+27648481794">
+              064 848 1794
+            </a>
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="https://www.google.com/maps/search/?api=1&query=Johannesburg,+Gauteng,+South+Africa" target="_blank">
+              South Africa, Gauteng, Johannesburg
+            </a>
+          </li>
         </ul>
         <div class="social-links">
-          <a href="http://www.linkedin.com/in/lebogangshearaft " target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/lebogangshearaft" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="http://www.linkedin.com/in/lebogangshearaft" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/lebogangshearaft" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
         </div>
       </div>
     </div>
   </section>
  <div class="container">
-
  <section id="projects" class="visible">
   <div class="tagline">
     <i class="fas fa-circle"></i>
     FEATURED PROJECTS
   </div>
-
+   <!---Projects Section -->
   <h2>My Projects</h2>
   <p>A selection of projects that demonstrate my technical skills and problem-solving ability.</p>
-
   <div class="container">
-
    <!-- EduMate -->
     <div class="project-card">
       <div class="project-header"></div>
@@ -845,14 +955,12 @@
           organization. The system is built with scalability and maintainability in mind,
           using modern web technologies and a strongly typed codebase.
         </p>
-    
         <p>
           The application uses React (with JSX) for a dynamic and responsive user interface,
           Node.js for backend and server-side logic, and Prisma as an ORM to manage database
           schemas and queries safely. TypeScript is used across the project to improve code
           reliability, maintainability, and long-term scalability.
         </p>
-    
         <div class="tech-tags">
           <span class="tech-tag">TypeScript</span>
           <span class="tech-tag">JavaScript</span>
@@ -862,7 +970,6 @@
           <span class="tech-tag">HTML</span>
           <span class="tech-tag">CSS</span>
         </div>
-    
         <a href="https://github.com/lebogangshearaft/edumate_app" target="_blank" class="project-link">View on GitHub</a>
       </div>
     </div>
@@ -877,14 +984,12 @@
           enables clients to view services, make bookings, and for administrators to manage
           availability and customer records using a structured backend API.
         </p>
-    
         <p>
           The project demonstrates practical use of modern backend development with Spring Boot,
           database integration using MySQL, and frontend interaction with HTML, CSS, and JavaScript.
           It also incorporates RESTful APIs and follows an MVC architecture to separate concerns
           and improve maintainability.
         </p>
-    
         <div class="tech-tags">
           <span class="tech-tag">Java</span>
           <span class="tech-tag">Spring Boot</span>
@@ -909,7 +1014,6 @@
           system evaluates clinical inputs and delivers evidence-based recommendations
           through a scalable API interface.
         </p>
-    
         <p>
           The solution is built using Python and FastAPI to provide clean, RESTful API
           endpoints for clinical rule processing. PostgreSQL serves as the persistent
@@ -917,7 +1021,6 @@
           architecture emphasizes modularity, maintainability, and easy integration with
           external systems.
         </p>
-    
         <div class="tech-tags">
           <span class="tech-tag">Python</span>
           <span class="tech-tag">FastAPI</span>
@@ -925,7 +1028,6 @@
           <span class="tech-tag">REST API</span>
           <span class="tech-tag">Backend Engineering</span>
         </div>
-    
         <a href="https://github.com/lebogangshearaft/clinical-decision-support-api"
            target="_blank"
            class="project-link">
@@ -933,7 +1035,6 @@
         </a>
       </div>
     </div>
-
     <!-- Portfolio -->
     <div class="project-card">
       <div class="project-card">
@@ -946,13 +1047,11 @@
           recruiter-friendly manner. The site serves as a central hub for showcasing
           real-world projects, GitHub repositories, and career-ready competencies.
         </p>
-    
         <p>
           The portfolio is built using semantic HTML, modern CSS, and vanilla JavaScript,
           with a strong focus on clean UI design, accessibility, and performance. It follows
           responsive design principles to ensure usability across desktop and mobile devices.
         </p>
-    
         <div class="tech-tags">
           <span class="tech-tag">HTML</span>
           <span class="tech-tag">CSS</span>
@@ -960,7 +1059,6 @@
           <span class="tech-tag">Responsive Design</span>
           <span class="tech-tag">UI/UX</span>
         </div>
-    
         <a href="https://github.com/lebogangshearaft/lebogangshearaft.github.io"
            target="_blank"
            class="project-link">
@@ -968,7 +1066,6 @@
         </a>
       </div>
     </div>
-
     <!-- Personal Budget API -->
     <div class="project-card">
       <div class="project-header"></div>
@@ -980,14 +1077,12 @@
           for creating, retrieving, updating, and analyzing budget data in a secure and
           scalable manner.
         </p>
-    
         <p>
           The API is built using Python and FastAPI, with PostgreSQL used for persistent data
           storage. It follows REST principles and clean architecture practices, enabling easy
           integration with frontend applications or external services while maintaining clear
           separation of concerns.
         </p>
-    
         <div class="tech-tags">
           <span class="tech-tag">Python</span>
           <span class="tech-tag">FastAPI</span>
@@ -995,7 +1090,6 @@
           <span class="tech-tag">REST API</span>
           <span class="tech-tag">Backend Development</span>
         </div>
-    
         <a href="https://github.com/lebogangshearaft/personal-budget-api"
            target="_blank"
            class="project-link">
@@ -1014,14 +1108,12 @@
           interface. The application focuses on client-side logic, usability, and responsive
           design principles.
         </p>
-    
         <p>
           The project is built using HTML, CSS, and JavaScript, demonstrating practical
           implementation of DOM manipulation, event handling, and interactive UI behavior.
           It emphasizes clean layout structure, user-friendly navigation, and modular
           frontend code.
         </p>
-    
         <div class="tech-tags">
           <span class="tech-tag">HTML</span>
           <span class="tech-tag">CSS</span>
@@ -1029,7 +1121,6 @@
           <span class="tech-tag">DOM Manipulation</span>
           <span class="tech-tag">Responsive Design</span>
         </div>
-    
         <a href="https://github.com/lebogangshearaft/Ordering-app"
            target="_blank"
            class="project-link">
@@ -1040,52 +1131,135 @@
  </section>
   <!-- Skills Section -->
   <section id="skills" class="visible">
-    <div class="tagline">
-      <i class="fas fa-circle"></i>
-      TECHNICAL SKILLS
+  <div class="tagline">
+    <i class="fas fa-circle"></i>
+    TECHNICAL SKILLS
+  </div>
+
+  <h2>Core Competencies</h2>
+  <p>My toolkit across full-stack development, databases, and engineering practices.</p>
+
+  <div class="skills-grid-pro">
+    <!-- Languages -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-code"></i></div>
+        <div>
+          <h3>Languages</h3>
+          <p>Strong foundation across backend + web</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">Java</span>
+        <span class="pill">Python</span>
+        <span class="pill">C#</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">TypeScript</span>
+        <span class="pill">SQL</span>
+      </div>
     </div>
-  
-    <h2>Core Competencies</h2>
-  
-    <div class="skills-compact">
-  
-      <div class="skill-row">
-        <strong>Languages</strong>
-        <span>Java, Python, C#, JavaScript, TypeScript, SQL</span>
+
+    <!-- Frameworks -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-layer-group"></i></div>
+        <div>
+          <h3>Frameworks</h3>
+          <p>Building APIs + modern web apps</p>
+        </div>
       </div>
-  
-      <div class="skill-row">
-        <strong>Frameworks</strong>
-        <span>Spring Boot, Node.js, Express.js, React.js, FastAPI</span>
+      <div class="skill-pills">
+        <span class="pill">Spring Boot</span>
+        <span class="pill">Node.js</span>
+        <span class="pill">Express.js</span>
+        <span class="pill">React.js</span>
+        <span class="pill">FastAPI</span>
       </div>
-  
-      <div class="skill-row">
-        <strong>Software Engineering</strong>
-        <span>OOP, Data Structures & Algorithms, SDLC, Agile</span>
-      </div>
-  
-      <div class="skill-row">
-        <strong>Databases</strong>
-        <span>PostgreSQL, MySQL</span>
-      </div>
-  
-      <div class="skill-row">
-        <strong>Cloud & DevOps</strong>
-        <span>Azure Fundamentals, AWS Basics, Docker, GitHub Actions</span>
-      </div>
-  
-      <div class="skill-row">
-        <strong>Testing & Quality</strong>
-        <span>Unit Testing, API Testing, Debugging</span>
-      </div>
-  
-      <div class="skill-row">
-        <strong>Tools</strong>
-        <span>Git, GitHub, Visual Studio, VS Code</span>
-      </div>
-  
     </div>
-  </section>
+
+    <!-- Databases -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-database"></i></div>
+        <div>
+          <h3>Databases</h3>
+          <p>Schema design + querying</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">MySQL</span>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-screwdriver-wrench"></i></div>
+        <div>
+          <h3>Tools</h3>
+          <p>Daily workflow + collaboration</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">Git</span>
+        <span class="pill">GitHub</span>
+        <span class="pill">VS Code</span>
+        <span class="pill">Visual Studio</span>
+        <span class="pill">Docker</span>
+        <span class="pill">GitHub Actions</span>
+      </div>
+    </div>
+
+    <!-- Engineering Practices -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-diagram-project"></i></div>
+        <div>
+          <h3>Software Engineering</h3>
+          <p>How I build reliable systems</p>
+        </div>
+      </div>
+      <ul class="skill-list-pro">
+        <li><i class="fas fa-check"></i> OOP, clean code, modular design</li>
+        <li><i class="fas fa-check"></i> Data Structures & Algorithms</li>
+        <li><i class="fas fa-check"></i> SDLC, documentation, maintainability</li>
+        <li><i class="fas fa-check"></i> Agile teamwork & delivery</li>
+      </ul>
+    </div>
+
+    <!-- Testing -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-shield-halved"></i></div>
+        <div>
+          <h3>Testing & Quality</h3>
+          <p>Stability and correctness</p>
+        </div>
+      </div>
+      <ul class="skill-list-pro">
+        <li><i class="fas fa-check"></i> Unit testing fundamentals</li>
+        <li><i class="fas fa-check"></i> API testing & debugging</li>
+        <li><i class="fas fa-check"></i> Error handling & validation</li>
+      </ul>
+    </div>
+
+    <!-- Cloud -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-cloud"></i></div>
+        <div>
+          <h3>Cloud</h3>
+          <p>Basics + deployment readiness</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">Azure Fundamentals</span>
+        <span class="pill">AWS Basics</span>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Certificates Section -->
   <section id="certificates" class="visible">
@@ -1271,26 +1445,35 @@
       </div>
     </div>
   </section>
-  <!-- Contact Section -->
-  <section id="contact" class="visible">
-    <div class="tagline">
-      <i class="fas fa-circle"></i>
-      GET IN TOUCH
+ <!-- Contact Section -->
+<section id="contact" class="visible">
+  <div class="tagline">
+    <i class="fas fa-circle"></i>
+    GET IN TOUCH
+  </div>
+  <h2>Contact Me</h2>
+  <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <i class="fas fa-envelope fa-2x"></i>
+      <h3>Email</h3>
+      <p>
+        <a href="mailto:mavhungulebogang17@gmail.com">
+          mavhungulebogang17@gmail.com
+        </a>
+      </p>
     </div>
-    <h2>Contact Me</h2>
-    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <i class="fas fa-envelope fa-2x"></i>
-        <h3>Email</h3>
-        <p>shearlerbow@gmail.com</p>
-      </div>
-      <div class="contact-item">
-        <i class="fas fa-phone fa-2x"></i>
-        <h3>Phone</h3>
-        <p>064 848 1794</p>
-      </div>
+    <div class="contact-item">
+      <i class="fas fa-phone fa-2x"></i>
+      <h3>Phone</h3>
+      <p>
+        <a href="tel:+27648481794">
+          064 848 1794
+        </a>
+      </p>
     </div>
+  </div>
+</section>
     <!-- Contact Form -->
     <div class="contact-form">
       <form id="contactForm">
@@ -1549,6 +1732,7 @@
   </script>
 </body>
 </html>
+
 
 
 
