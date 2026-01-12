@@ -7,22 +7,41 @@ const navLinks = document.querySelectorAll('.nav-links a');
 const sections = document.querySelectorAll('section');
 const navbar = document.getElementById('navbar');
 
-// Theme Toggle
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('light-mode');
-  body.classList.toggle('dark-mode');
+// Theme Toggle (Dark Default)
+if (themeToggle) {
   const icon = themeToggle.querySelector('i');
-  if (body.classList.contains('light-mode')) {
-    icon.classList.replace('fa-sun', 'fa-moon');
-  } else {
+
+  // Load saved theme (does NOT depend on device)
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'light') {
+    body.classList.add('light-mode');
     icon.classList.replace('fa-moon', 'fa-sun');
+  } else {
+    icon.classList.replace('fa-sun', 'fa-moon');
   }
-});
+
+  // Toggle theme on click
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+
+    if (body.classList.contains('light-mode')) {
+      localStorage.setItem('theme', 'light');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+      localStorage.setItem('theme', 'dark');
+      icon.classList.replace('fa-sun', 'fa-moon');
+    }
+  });
+}
 
 // Mobile Menu Toggle
-mobileToggle.addEventListener('click', () => {
-  mobileMenu.classList.toggle('active');
-});
+if (mobileToggle && mobileMenu) {
+  mobileToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
+}
+
 
 // Close mobile menu when clicking a link
 navLinks.forEach(link => {
@@ -64,10 +83,17 @@ sections.forEach(section => {
 });
 
 // Navbar background on scroll
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.style.background = 'rgba(17, 24, 39, 0.95)';
-  } else {
-    navbar.style.background = 'rgba(17, 24, 39, 0.8)';
-  }
-});
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.style.background = body.classList.contains('light-mode')
+        ? 'rgba(255, 255, 255, 0.95)'
+        : 'rgba(17, 24, 39, 0.95)';
+    } else {
+      navbar.style.background = body.classList.contains('light-mode')
+        ? 'rgba(255, 255, 255, 0.8)'
+        : 'rgba(17, 24, 39, 0.8)';
+    }
+  });
+}
+
