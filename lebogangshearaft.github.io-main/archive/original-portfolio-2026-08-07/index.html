@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mavhungu Lebogang Shearaft - Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Mavhungu Lebogang Shearaft, Full-Stack Developer & BSc IT Student" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- DevIcons for Technology Logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg-primary: #111827;
+      --bg-secondary: #1f2937;
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --accent-blue: #3b82f6;
+      --accent-purple: #9333ea;
+      --accent-pink: #ec4899;
+      --border-light: #374151;
+      --transition: all 0.3s ease;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.4);
+      --section-padding: 120px 2rem;
+    }
+    .light-mode {
+      --bg-primary: #f9fafb;
+      --bg-secondary: #e5e7eb;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --border-light: #d1d5db;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: var(--transition);
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 1.5rem 2rem;
+      background: rgba(17, 24, 39, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+    .light-mode nav {
+      background: rgba(255, 255, 255, 0.95);
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(90deg, #3b82f6, #9333ea, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    .logo i {
+      color: #3b82f6;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: var(--accent-blue);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-blue);
+      transition: var(--transition);
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      color: var(--accent-blue);
+    }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    /* Sections */
+    section {
+      padding: var(--section-padding);
+      max-width: 1400px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    /* Hero Section with Profile Image */
+    #about {
+      padding-top: 180px;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .profile-image-container {
+      margin: 2rem 0;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      width: 180px;
+      height: 180px;
+      border: 5px solid var(--accent-blue);
+    }
+    .profile-image-container:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-hover);
+    }
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59, 130, 246, 0.1);
+      color: #3b82f6;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+    .tagline i {
+      font-size: 0.8rem;
+    }
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #3b82f6, #9333ea, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0.5rem;
+      transition: var(--transition);
+      display: inline-block;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+      color: white;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid var(--accent-blue);
+    }
+    .light-mode .btn-secondary {
+      background: #f3f4f6;
+      color: #1a1a1a;
+      border: 1px solid #d1d5db;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .light-mode .btn-secondary:hover {
+      background: #e5e7eb;
+    }
+    /* Profile Card (without image) */
+    .profile-card {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      width: 100%;
+      margin: 2rem auto;
+      max-width: 350px;
+    }
+    .profile-card:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+    .profile-header {
+      height: 10px;
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+    }
+    .profile-body {
+      padding: 1.5rem;
+    }
+    .profile-img-placeholder {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: -40px auto 1rem;
+      border: 5px solid var(--bg-primary);
+      color: white;
+      font-size: 2rem;
+    }
+    .light-mode .profile-img-placeholder {
+      border-color: white;
+    }
+    .profile-body h3 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .profile-body p {
+      text-align: center;
+      color: #3b82f6;
+      font-weight: 500;
+    }
+    .contact-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0.8rem 0;
+      color: var(--text-secondary);
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--bg-secondary);
+      border-radius: 50%;
+      color: white;
+      transition: var(--transition);
+    }
+    .social-links a:hover {
+      background: #3b82f6;
+      transform: translateY(-3px);
+    }
+    /* Projects */
+    #projects .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+    }
+    .project-header {
+      height: 6px;
+      background: linear-gradient(90deg, #3b82f6, #9333ea, #ec4899);
+    }
+    .project-body {
+      padding: 1.5rem;
+    }
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .tech-tag {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-secondary);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .project-links a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition);
+    }
+    .project-links a:hover {
+      color: var(--accent-purple);
+    }
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .skill-card {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+    }
+    .skill-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    /* Skill Bars */
+    .skill-bars {
+      margin-top: 1.5rem;
+    }
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .skill-bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #9333ea);
+      border-radius: 4px;
+      transition: width 1.5s ease;
+      width: 0;
+    }
+    .skills-grid-pro {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-card-pro {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .skill-card-pro:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .skill-card-pro-header {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .skill-icon-pro {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .skill-card-pro h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    
+    .skill-card-pro p {
+      margin: 0.2rem 0 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .light-mode .pill {
+      background: rgba(17, 24, 39, 0.06);
+      border: 1px solid rgba(17, 24, 39, 0.08);
+    }
+    
+    .skill-list-pro {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+    
+    .skill-list-pro li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    .skill-list-pro i {
+      color: #3b82f6;
+      margin-top: 3px;
+    }
+
+    /* Certificates */
+    .cert-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .cert-card {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+      position: relative;
+    }
+    .cert-card:hover {
+      transform: translateX(5px);
+    }
+    .cert-date {
+      background: #3b82f6;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .cert-download {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+    .cert-download:hover {
+      background: #3b82f6;
+    }
+    /* Testimonials */
+    #testimonials {
+      padding: 100px 2rem;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .testimonial-card {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: """;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 5rem;
+      color: rgba(59, 130, 246, 0.1);
+      font-family: serif;
+      line-height: 1;
+    }
+    .testimonial-content {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    .author-info h4 {
+      margin: 0;
+      color: var(--text-primary);
+    }
+    .author-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    /* Contact */
+    #contact .container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .contact-item {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+    }
+    /* Contact Form */
+    .contact-form {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-top: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+    .submit-btn {
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    }
+    /* Technologies */
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    .tech-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .tech-item img {
+      width: 48px;
+      height: 48px;
+      transition: var(--transition);
+      filter: grayscale(1);
+    }
+    .tech-item:hover img {
+      filter: grayscale(0);
+      transform: scale(1.1);
+    }
+    .tech-item span {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      z-index: 40;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      transform: translateY(-5px);
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    /* Responsive */
+    @media (min-width: 769px) {
+      #about {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 3rem;
+      }
+      .hero-content {
+        flex: 1;
+        text-align: left;
+        align-items: flex-start;
+      }
+      .photo-slogan {
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+    
+    @media (min-width: 769px) {
+      .photo-slogan {
+        text-align: left;
+      }
+    }
+      .profile-image-container {
+        width: 200px;
+        height: 200px;
+        align-self: center;
+      }
+      .profile-card {
+        max-width: 350px;
+      }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-right {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+      }
+      .mobile-menu.active {
+        display: flex;
+      }
+      .mobile-menu a {
+        color: var(--text-secondary);
+        padding: 0.8rem 1rem;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .mobile-menu a:hover {
+        color: var(--accent-blue);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#about" class="logo">
+        <i class="fas fa-code"></i>
+        Mavhungu Lebogang Shearaft's Portfolio
+      </a>
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="mobile-toggle" id="mobileToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="nav-links mobile-menu" id="mobileMenu"></div>
+  </nav>
+  <!-- Hero Section with Profile Image -->
+  <section id="about" class="visible">
+    <!-- Profile Image -->
+    <div class="profile-image-container">
+      <img src="main.jpg" alt="Mavhungu Lebogang Shearaft" class="profile-image">
+    </div>
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="tagline">
+        <i class="fas fa-circle"></i>
+        FULL-STACK SOFTWARE DEVELOPER
+       </div>
+        <p class="photo-slogan">
+        Building reliable software for real-world problems.
+        </p>
+      <h1 class="hero-title">I am <span class="gradient-text">Mavhungu Lebogang Shearaft</span></h1>
+      <p>I am a Software Engineering graduate with a Bachelor of Science in Information Technology ( Majoring in Computer Sciences and Information systems ) from North-West University, focused on delivering practical, reliable, and scalable software solutions that solve real business problems. I bring a strong foundation in full-stack development, systems analysis, backend engineering and Frontend Engineering, with hands-on experience building data-driven applications, secure APIs, and user-focused digital systems.
+      </p>
+      <p>
+      I position myself as a problem-solver first. Someone who listens to requirements, understands business needs, and translates them into clean, maintainable software. I have worked on academic and real-world projects involving booking systems, clinical decision support system , and education platforms, Website, applying best practices in software design, testing, and documentation.
+      </p>
+      <p>
+        As a graduate, I am highly adaptable, eager to learn, and able to work well under pressure. I am highly motivated to continuously develop new skills and grow within a professional engineering environment. I am passionate about developing enterprise-level software solutions while contributing positively to collaborative, team-based development. I am committed to continuous improvement, effective collaboration, and delivering value from day one, with the goal of becoming a well-rounded engineer who contributes meaningfully to both team and organizational success.
+      </p>
+      <div>
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="Mavhungu_Lebogang_Software_Engineering_Graduate_CV.pdf" class="btn btn-secondary" download>Download CV</a>
+      </div>
+    </div>
+  </section>
+  <!-- Profile Card Section -->
+  <section id="profile" class="visible">
+    <div class="profile-card">
+      <div class="profile-header"></div>
+      <div class="profile-body">
+        <div class="profile-img-placeholder">
+          <i class="fas fa-user"></i>
+        </div>
+        <h3>Mavhungu Lebogang Shearaft</h3>
+        <p>Full-Stack Software Developer</p>
+        <ul class="contact-list">
+          <li>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:mavhungulebogang17@gmail.com">
+              mavhungulebogang17@gmail.com
+            </a>
+          </li>
+          <li>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+27648481794">
+              064 848 1794
+            </a>
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="https://www.google.com/maps/search/?api=1&query=Johannesburg,+Gauteng,+South+Africa" target="_blank">
+              South Africa, Gauteng, Johannesburg
+            </a>
+          </li>
+        </ul>
+        <div class="social-links">
+          <a href="http://www.linkedin.com/in/lebogangshearaft" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/lebogangshearaft" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+ <div class="container">
+ <section id="projects" class="visible">
+  <div class="tagline">
+    <i class="fas fa-circle"></i>
+    FEATURED PROJECTS
+  </div>
+   <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p>A selection of projects that demonstrate my technical skills and problem-solving ability.</p>
+    <div class="container">
+  
+      <!-- EduMate -->
+      <div class="project-card">
+        <div class="project-header"></div>
+        <div class="project-body">
+          <h3>EduMate</h3>
+          <p>
+            EduMate is a full-stack educational support platform designed to help students
+            manage learning resources, track academic progress, and improve overall study
+            organization. The system is built with scalability and maintainability in mind,
+            using modern web technologies and a strongly typed codebase.
+          </p>
+          <p>
+            The application uses React (with JSX) for a dynamic and responsive user interface,
+            Node.js for backend and server-side logic, and Prisma as an ORM to manage database
+            schemas and queries safely. TypeScript is used across the project to improve code
+            reliability, maintainability, and long-term scalability.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Prisma ORM</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+          </div>
+          <a href="https://github.com/lebogangshearaft/edumate_app" target="_blank" class="project-link">View on GitHub</a>
+        </div>
+      </div>
+  
+      <!-- Salon Management System -->
+      <div class="project-card">
+        <div class="project-header"></div>
+        <div class="project-body">
+          <h3>Salon Management System</h3>
+          <p>
+            A full-stack salon management web application designed to streamline appointments,
+            service listings, and customer interaction for a beauty and hair salon. The system
+            enables clients to view services, make bookings, and for administrators to manage
+            availability and customer records using a structured backend API.
+          </p>
+          <p>
+            The project demonstrates practical use of modern backend development with Spring Boot,
+            database integration using MySQL, and frontend interaction with HTML, CSS, and JavaScript.
+            It also incorporates RESTful APIs and follows an MVC architecture to separate concerns
+            and improve maintainability.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">REST API</span>
+            <span class="tech-tag">MVC</span>
+          </div>
+          <a href="https://github.com/lebogangshearaft/lerbows-luxury-hair-beauty-salon" target="_blank" class="project-link">View on GitHub</a>
+          <a href="https://lebogangshearaft.github.io/lerbows-luxury-hair-beauty-salon" target="_blank" class="project-link">View  my website </a>
+        </div>
+      </div>
+  
+      <!-- Clinical Decision Support System (CDSS) -->
+      <div class="project-card">
+        <div class="project-header"></div>
+        <div class="project-body">
+          <h3>Clinical Decision Support System (CDSS)</h3>
+          <p>
+            A backend-driven Clinical Decision Support System (CDSS) designed to assist
+            healthcare professionals with structured, data-informed decision-making. This
+            system evaluates clinical inputs and delivers evidence-based recommendations
+            through a scalable API interface.
+          </p>
+          <p>
+            The solution is built using Python and FastAPI to provide clean, RESTful API
+            endpoints for clinical rule processing. PostgreSQL serves as the persistent
+            database, ensuring reliable storage and querying of healthcare datasets. This
+            architecture emphasizes modularity, maintainability, and easy integration with
+            external systems.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">REST API</span>
+            <span class="tech-tag">Backend Engineering</span>
+          </div>
+          <a href="https://github.com/lebogangshearaft/clinical-decision-support-api" target="_blank" class="project-link">View on GitHub</a>
+        </div>
+      </div>
+  
+      <!-- Personal Portfolio Website -->
+      <div class="project-card">
+        <div class="project-header"></div>
+        <div class="project-body">
+          <h3>Personal Portfolio Website</h3>
+          <p>
+            A responsive personal portfolio website designed to present my technical skills,
+            software engineering projects, and professional background in a clear and
+            recruiter-friendly manner. The site serves as a central hub for showcasing
+            real-world projects, GitHub repositories, and career-ready competencies.
+          </p>
+          <p>
+            The portfolio is built using semantic HTML, modern CSS, and vanilla JavaScript,
+            with a strong focus on clean UI design, accessibility, and performance. It follows
+            responsive design principles to ensure usability across desktop and mobile devices.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Responsive Design</span>
+            <span class="tech-tag">UI/UX</span>
+          </div>
+          <a href="https://github.com/lebogangshearaft/lebogangshearaft.github.io" target="_blank" class="project-link">View on GitHub</a>
+        </div>
+      </div>
+  
+      <!-- Personal Budget API -->
+      <div class="project-card">
+        <div class="project-header"></div>
+        <div class="project-body">
+          <h3>Personal Budget API</h3>
+          <p>
+            A backend RESTful API designed to help users manage personal budgets by tracking
+            income, expenses, and financial categories. The system provides structured endpoints
+            for creating, retrieving, updating, and analyzing budget data in a secure and
+            scalable manner.
+          </p>
+          <p>
+            The API is built using Python and FastAPI, with PostgreSQL used for persistent data
+            storage. It follows REST principles and clean architecture practices, enabling easy
+            integration with frontend applications or external services while maintaining clear
+            separation of concerns.
+          </p>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">DOM Manipulation</span>
+            <span class="tech-tag">Responsive Design</span>
+          </div>
+          <a href="https://github.com/lebogangshearaft/Ordering-app" target="_blank" class="project-link">View on GitHub</a>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="visible">
+  <div class="tagline">
+    <i class="fas fa-circle"></i>
+    TECHNICAL SKILLS
+  </div>
+
+  <h2>Core Competencies</h2>
+  <p>My toolkit across full-stack development, databases, and engineering practices.</p>
+
+  <div class="skills-grid-pro">
+    <!-- Languages -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-code"></i></div>
+        <div>
+          <h3>Languages</h3>
+          <p>Strong foundation across backend + web</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">Java</span>
+        <span class="pill">Python</span>
+        <span class="pill">C#</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">TypeScript</span>
+        <span class="pill">SQL</span>
+      </div>
+    </div>
+
+    <!-- Frameworks -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-layer-group"></i></div>
+        <div>
+          <h3>Frameworks</h3>
+          <p>Building APIs + modern web apps</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">Spring Boot</span>
+        <span class="pill">Node.js</span>
+        <span class="pill">Express.js</span>
+        <span class="pill">React.js</span>
+        <span class="pill">FastAPI</span>
+      </div>
+    </div>
+
+    <!-- Databases -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-database"></i></div>
+        <div>
+          <h3>Databases</h3>
+          <p>Schema design + querying</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">MySQL</span>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-screwdriver-wrench"></i></div>
+        <div>
+          <h3>Tools</h3>
+          <p>Daily workflow + collaboration</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">Git</span>
+        <span class="pill">GitHub</span>
+        <span class="pill">VS Code</span>
+        <span class="pill">Visual Studio</span>
+        <span class="pill">Docker</span>
+        <span class="pill">GitHub Actions</span>
+      </div>
+    </div>
+
+    <!-- Engineering Practices -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-diagram-project"></i></div>
+        <div>
+          <h3>Software Engineering</h3>
+          <p>How I build reliable systems</p>
+        </div>
+      </div>
+      <ul class="skill-list-pro">
+        <li><i class="fas fa-check"></i> OOP, clean code, modular design</li>
+        <li><i class="fas fa-check"></i> Data Structures & Algorithms</li>
+        <li><i class="fas fa-check"></i> SDLC, documentation, maintainability</li>
+        <li><i class="fas fa-check"></i> Agile teamwork & delivery</li>
+      </ul>
+    </div>
+
+    <!-- Testing -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-shield-halved"></i></div>
+        <div>
+          <h3>Testing & Quality</h3>
+          <p>Stability and correctness</p>
+        </div>
+      </div>
+      <ul class="skill-list-pro">
+        <li><i class="fas fa-check"></i> Unit testing fundamentals</li>
+        <li><i class="fas fa-check"></i> API testing & debugging</li>
+        <li><i class="fas fa-check"></i> Error handling & validation</li>
+      </ul>
+    </div>
+
+    <!-- Cloud -->
+    <div class="skill-card-pro">
+      <div class="skill-card-pro-header">
+        <div class="skill-icon-pro"><i class="fas fa-cloud"></i></div>
+        <div>
+          <h3>Cloud</h3>
+          <p>Basics + deployment readiness</p>
+        </div>
+      </div>
+      <div class="skill-pills">
+        <span class="pill">Azure Fundamentals</span>
+        <span class="pill">AWS Basics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="visible">
+    <div class="tagline">
+      <i class="fas fa-circle"></i>
+      CERTIFICATIONS
+    </div>
+    <h2>Certificates Completed</h2>
+    <div class="cert-list">
+      <!-- All certificates arranged from newest to oldest -->
+      <div class="cert-card">
+        <div>
+          <h3>Full-Stack Professional Certification</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Comprehensive full-stack development certification covering front-end and back-end technologies, APIs, databases, and deployment best practices.</p>
+        </div>
+        <div class="cert-date">14 August 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Full-Stack-Professional-Certification.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Back-End Professional Certification</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Professional-level certification in back-end development covering Java, Python, C#, SQL, RESTful APIs, authentication, Docker, and server deployment.</p>
+        </div>
+        <div class="cert-date">14 August 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Back-End-Professional-Certification.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Front-End Professional Certification</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Comprehensive front-end development certification covering HTML, CSS, JavaScript, React, Redux, and modern web development tools.</p>
+        </div>
+        <div class="cert-date">24 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Front-End Professional Certification.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>FNB Full-stack Developer Certification</h3>
+          <p>Issuing Organization: FNB</p>
+          <p>Prestigious full-stack development certification from First National Bank, demonstrating expertise in both front-end and back-end technologies.</p>
+        </div>
+        <div class="cert-date">12 July 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/FNB-Full-stack-Certification.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Create a Front-End App with React Skill Path</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Advanced certification in building front-end applications using React, covering component architecture, state management, and modern React patterns.</p>
+        </div>
+        <div class="cert-date">13 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-React-Skill-Path.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Learn Git & GitHub Course</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Comprehensive course on Git and GitHub, covering version control, collaboration workflows, branching, and pull requests.</p>
+        </div>
+        <div class="cert-date">14 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-Git-Branching.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Learn Git: Branching and Collaboration Course</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Specialized course focusing on advanced Git branching strategies and collaborative development workflows.</p>
+        </div>
+        <div class="cert-date">14 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow_shear_s profile _ Codecademy git.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Learn Git: Introduction Course</h3>
+          <p>Issuing Organization: CodeCademy</p>
+          <p>Foundational course introducing Git version control system, covering basic commands, repositories, and workflow concepts.</p>
+        </div>
+        <div class="cert-date">13 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-Git-Intro.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Learn JavaScript: Intermediate Course</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Advanced JavaScript concepts including closures, prototypes, asynchronous programming, and functional programming patterns.</p>
+        </div>
+        <div class="cert-date">7 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-JavaScript-Intermediate.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Learn JavaScript: Classes and Modules</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>In-depth course on modern JavaScript ES6+ features including classes, inheritance, modules, and import/export syntax.</p>
+        </div>
+        <div class="cert-date">7 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-JavaScript-Basics2.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Learn JavaScript Course</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Comprehensive JavaScript course covering variables, data types, functions, loops, arrays, and DOM manipulation.</p>
+        </div>
+        <div class="cert-date">1 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-JavaScript-Basics.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Build a Website with HTML, CSS, and GitHub Pages Skill Path</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Skill path covering web development fundamentals, responsive design, and deploying websites using GitHub Pages.</p>
+        </div>
+        <div class="cert-date">8 May 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-HTML-CSS-GitHub.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Learn Node.js: Fundamentals Course</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Foundational course on Node.js, covering the runtime environment, npm, modules, and building server-side applications.</p>
+        </div>
+        <div class="cert-date">30 April 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-Node-js-Fundamentals.pdf', '_blank')">View Certificate</button>
+      </div>
+      <div class="cert-card">
+        <div>
+          <h3>Learn Node.js Course</h3>
+          <p>Issuing Organization: Codecademy</p>
+          <p>Comprehensive Node.js course covering Express.js, REST APIs, database integration, and authentication.</p>
+        </div>
+        <div class="cert-date">30 April 2025</div>
+        <button class="cert-download" onclick="window.open('Certificates/Lerbow-shear-s-Node-js-Course.pdf', '_blank')">View Certificate</button>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="visible">
+    <div class="tagline">
+      <i class="fas fa-circle"></i>
+      TESTIMONIALS
+    </div>
+    <h2>What People Say</h2>
+    <p class="text-center">Feedback from colleagues, mentors, and collaborators</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          "Lebogang is an exceptional developer with a keen eye for detail and a passion for solving complex problems. His ability to work in agile teams and deliver high-quality code under tight deadlines is truly impressive."
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">JD</div>
+          <div class="author-info">
+            <h4>John Doe</h4>
+            <p>Senior Developer, FNB</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          "Working with Lebogang on the Code Fest Bootcamp was a pleasure. He demonstrated strong technical skills, excellent communication, and a collaborative spirit that elevated our entire team's performance."
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">JS</div>
+          <div class="author-info">
+            <h4>Jane Smith</h4>
+            <p>Tech Mentor, Codecademy</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          "Lebogang's dedication to continuous learning and his ability to quickly master new technologies make him a valuable asset to any development team. His portfolio projects showcase both creativity and technical excellence."
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div class="author-info">
+            <h4>Michael Ross</h4>
+            <p>IT Professor, NWU</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <!-- Contact Section -->
+<section id="contact" class="visible">
+  <div class="tagline">
+    <i class="fas fa-circle"></i>
+    GET IN TOUCH
+  </div>
+  <h2>Contact Me</h2>
+  <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <i class="fas fa-envelope fa-2x"></i>
+      <h3>Email</h3>
+      <p>
+        <a href="mailto:mavhungulebogang17@gmail.com">
+          mavhungulebogang17@gmail.com
+        </a>
+      </p>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-phone fa-2x"></i>
+      <h3>Phone</h3>
+      <p>
+        <a href="tel:+27648481794">
+          064 848 1794
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+    <div class="social-links" style="margin-top: 2rem;">
+      <a href="www.linkedin.com/in/lebogangshearaft" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/lebogangshearaft" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+  <!-- Technologies Used -->
+  <section id="technologies" class="visible">
+    <div class="tagline">
+      <i class="fas fa-circle"></i>
+      TECHNOLOGIES USED
+    </div>
+    <h2>Tools & Technologies</h2>
+    <p class="text-center">The technologies I work with every day</p>
+    <div class="tech-icons">
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+        <span>Python</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+        <span>Java</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+        <span>C++</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />
+        <span>C#</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        <span>JavaScript</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+        <span>HTML</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+        <span>CSS</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        <span>Git</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+        <span>Node.js</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        <span>GitHub</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+        <span>React</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" />
+        <span>Spring Boot</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-original.svg" alt="Django" />
+        <span>Django</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" />
+        <span>Express</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+        <span>MongoDB</span>
+      </div>
+      <div class="tech-item">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+        <span>PostgreSQL</span>
+      </div>
+    </div>
+  </section>
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Lebogang Shearaft. All Rights Reserved.</p>
+  </footer>
+  <!-- JavaScript -->
+  <script>
+    // DOM Elements
+    const body = document.body;
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+    const navbar = document.getElementById('navbar');
+    const backToTop = document.getElementById('backToTop');
+    const contactForm = document.getElementById('contactForm');
+    const skillProgressBars = document.querySelectorAll('.skill-progress');
+    
+    // Theme Toggle
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      body.classList.toggle('dark-mode');
+      const icon = themeToggle.querySelector('i');
+      if (body.classList.contains('light-mode')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+    
+    // Mobile Menu Toggle
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+    
+    // Close mobile menu when clicking a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+    
+    // Smooth Scroll & Highlight Active Section
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    
+    // Intersection Observer for Scroll Animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Update active nav link
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    // Only observe sections that aren't already visible
+    sections.forEach(section => {
+      if (!section.classList.contains('visible')) {
+        observer.observe(section);
+      }
+    });
+    
+    // Navbar background on scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(17, 24, 39, 0.95)';
+      } else {
+        navbar.style.background = 'rgba(17, 24, 39, 0.8)';
+      }
+      
+      // Back to top button
+      if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    
+    // Back to Top functionality
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Animate skill bars when skills section is in view
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          skillProgressBars.forEach(bar => {
+            bar.style.width = bar.getAttribute('data-width');
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) {
+      skillsObserver.observe(skillsSection);
+    }
+    
+    // Contact Form Submission
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // In a real application, you would send this data to a server
+      // For this demo, we'll just show an alert
+      alert(`Thank you ${name}! Your message has been sent. I'll get back to you soon.`);
+      
+      // Reset form
+      contactForm.reset();
+    });
+    
+    // Initialize skill bars (set width after page load)
+    document.addEventListener('DOMContentLoaded', () => {
+      // Small delay to ensure the skills section is in view
+      setTimeout(() => {
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+          const rect = skillsSection.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            skillProgressBars.forEach(bar => {
+              bar.style.width = bar.getAttribute('data-width');
+            });
+          }
+        }
+      }, 500);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

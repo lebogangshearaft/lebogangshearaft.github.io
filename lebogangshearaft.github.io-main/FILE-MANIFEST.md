@@ -1,0 +1,111 @@
+# Final Portfolio File Manifest
+
+Generated from the exact uploaded project. No original files were deleted.
+
+## Certificate PDFs linked on the portfolio
+- `Certificates/Sage-2026/Sage-X3-Certified-API-Developer.pdf`
+- `Certificates/Back-End-Professional-Certification.pdf`
+- `Certificates/FNB-Full-stack-Certification.pdf`
+- `Certificates/Front-End Professional Certification.pdf`
+- `Certificates/Full-Stack-Professional-Certification.pdf`
+- `Certificates/Lerbow-shear-s-Git-Branching.pdf`
+- `Certificates/Lerbow-shear-s-Git-GitHub.pdf`
+- `Certificates/Lerbow-shear-s-Git-Intro.pdf`
+- `Certificates/Lerbow-shear-s-HTML-CSS-GitHub.pdf`
+- `Certificates/Lerbow-shear-s-JavaScript-Basics.pdf`
+- `Certificates/Lerbow-shear-s-JavaScript-Basics2.pdf`
+- `Certificates/Lerbow-shear-s-JavaScript-Intermediate.pdf`
+- `Certificates/Lerbow-shear-s-Node-js-Course.pdf`
+- `Certificates/Lerbow-shear-s-Node-js-Fundamentals.pdf`
+- `Certificates/Lerbow-shear-s-React-Skill-Path.pdf`
+- `Certificates/Sage-2026/Sage-Intacct-Accounting-Consultant-Assessment-2026.pdf`
+- `Certificates/Sage-2026/Sage-Intacct-Certified-Accounting-Consultant-Alternate.pdf`
+- `Certificates/Sage-2026/Sage-Intacct-Certified-Accounting-Consultant.pdf`
+- `Certificates/Sage-2026/Sage-Intacct-Getting-Started.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-Developer-Assessment.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-Developer-Sample-Questions.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-Developer.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-System-Administration-Consultant.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-System-Engineer-Sample-Questions.pdf`
+- `Certificates/Sage-2026/Sage-X3-Developer-Knowledge-Check.pdf`
+- `Certificates/Sage-2026/Sage-X3-Manufacturing-Consultant-Sample-Questions.pdf`
+- `Certificates/Sage-2026/Sage-X3-System-Administration-Assessment.pdf`
+- `Certificates/Sage-2026/Sage-X3-System-Administration-Sample-Questions.pdf`
+- `Certificates/Sage-2026/Sage-X3-System-Administration-Virtual.pdf`
+- `Certificates/Sage-2026/Sage-X3-Upgrade-Tools.pdf`
+- `certificates/FNB Full-stack certification of completion.pdf`
+- `certificates/Front-End Professional Certification.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy Git and GitHub1.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy Git and GitHub2.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy git.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_javaScript_1.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_javaScript_2.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_javaScript_3.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_node.js.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_node.js_2.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_website.pdf`
+
+## All project files
+- `Certificates/Back-End-Professional-Certification.pdf`
+- `Certificates/FNB-Full-stack-Certification.pdf`
+- `Certificates/Front-End Professional Certification.pdf`
+- `Certificates/Full-Stack-Professional-Certification.pdf`
+- `Certificates/Lerbow-shear-s-Git-Branching.pdf`
+- `Certificates/Lerbow-shear-s-Git-GitHub.pdf`
+- `Certificates/Lerbow-shear-s-Git-Intro.pdf`
+- `Certificates/Lerbow-shear-s-HTML-CSS-GitHub.pdf`
+- `Certificates/Lerbow-shear-s-JavaScript-Basics.pdf`
+- `Certificates/Lerbow-shear-s-JavaScript-Basics2.pdf`
+- `Certificates/Lerbow-shear-s-JavaScript-Intermediate.pdf`
+- `Certificates/Lerbow-shear-s-Node-js-Course.pdf`
+- `Certificates/Lerbow-shear-s-Node-js-Fundamentals.pdf`
+- `Certificates/Lerbow-shear-s-React-Skill-Path.pdf`
+- `Certificates/Sage-2026/Sage-Intacct-Accounting-Consultant-Assessment-2026.pdf`
+- `Certificates/Sage-2026/Sage-Intacct-Certified-Accounting-Consultant-Alternate.pdf`
+- `Certificates/Sage-2026/Sage-Intacct-Certified-Accounting-Consultant.pdf`
+- `Certificates/Sage-2026/Sage-Intacct-Getting-Started.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-Developer-Assessment.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-Developer-Sample-Questions.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-Developer.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-System-Administration-Consultant.pdf`
+- `Certificates/Sage-2026/Sage-X3-Certified-System-Engineer-Sample-Questions.pdf`
+- `Certificates/Sage-2026/Sage-X3-Developer-Knowledge-Check.pdf`
+- `Certificates/Sage-2026/Sage-X3-Manufacturing-Consultant-Sample-Questions.pdf`
+- `Certificates/Sage-2026/Sage-X3-System-Administration-Assessment.pdf`
+- `Certificates/Sage-2026/Sage-X3-System-Administration-Sample-Questions.pdf`
+- `Certificates/Sage-2026/Sage-X3-System-Administration-Virtual.pdf`
+- `Certificates/Sage-2026/Sage-X3-Upgrade-Tools.pdf`
+- `Certificates/professional`
+- `FILE-MANIFEST.md`
+- `LebogangShearaft_BACK-END_Resume.pdf`
+- `LebogangShearaft_FRONT-END_Resume.pdf`
+- `Lebogang_Mavhungu_Amazon_SDE_Graduate_CV.pdf`
+- `Mavhungu_Lebogang_Shearaft_CV.pdf.pdf`
+- `Mavhungu_Lebogang_Software_Engineering_Graduate_CV.pdf`
+- `PUSH-READY.md`
+- `README.md`
+- `archive/original-portfolio-2026-08-07/README.md`
+- `archive/original-portfolio-2026-08-07/index.html`
+- `archive/original-portfolio-2026-08-07/main.jpg`
+- `archive/original-portfolio-2026-08-07/script.js`
+- `archive/original-portfolio-2026-08-07/style.css`
+- `certificates/FNB Full-stack certification of completion.pdf`
+- `certificates/Front-End Professional Certification.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy Git and GitHub1.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy Git and GitHub2.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy git.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_javaScript_1.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_javaScript_2.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_javaScript_3.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_node.js.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_node.js_2.pdf`
+- `certificates/Lerbow_shear_s profile _ Codecademy_website.pdf`
+- `certificates/professional`
+- `index.html`
+- `main-original.jpg`
+- `main.jpg`
+- `professional-profile.png`
+- `script.js`
+- `style.css`
